@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import {
+  ChakraProvider,
+  Box,
+  Modal,
+  Button,
+  useDisclosure,
+  ModalOverlay,
+  ModalHeader,
+  ModalContent,
+  ModalCloseButton,
+} from "@chakra-ui/react";
 
 function App() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider>
+      <Button onClick={onOpen}>Tomato</Button>
+      {/* <Modal isOpen={isOpen} onClose={onClose}> */}
+      <Modal isOpen={isOpen}>
+        <ModalOverlay>
+          <ModalContent>
+            <ModalHeader>Modal Header</ModalHeader>
+            <ModalCloseButton />
+            <Box>Test</Box>
+          </ModalContent>
+        </ModalOverlay>
+      </Modal>
+    </ChakraProvider>
   );
 }
 
