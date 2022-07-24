@@ -18,7 +18,7 @@ function App() {
     <ChakraProvider>
       <Button onClick={onOpen}>Tomato</Button>
       {/* <Modal isOpen={isOpen} onClose={onClose}> */}
-      <Modal isOpen={isOpen}>
+      <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay>
           <ModalContent>
             <ModalHeader>Modal Header</ModalHeader>
